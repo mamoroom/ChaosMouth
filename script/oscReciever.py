@@ -31,7 +31,8 @@ def resetMedia():
     global process
     print "kill to:"
     print process
-    process.kill()
+    #process.kill()
+    process.terminate()
     time.sleep(0.1)
 
 
