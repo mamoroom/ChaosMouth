@@ -2,8 +2,8 @@ import time, threading
 import OSC
 import subprocess
 
-#server_address = ("127.0.0.1", 9000)
-server_address = ("172.20.10.11", 9000)
+server_address = ("192.168.1.96", 9000)
+#server_address = ("172.20.10.11", 9000)
 server = OSC.OSCServer(server_address)
 server.addDefaultHandlers()
 process = subprocess.Popen( "tail -f /home/root/git/github-muraji/ChaosMouth/script/hoge.py", shell=True, stderr=subprocess.STDOUT  )
@@ -24,6 +24,21 @@ def myMediaChange_handler(addr, tags, data, client_address):
     elif data[0] == 3:
         resetMedia()
         cmd = "aplay /home/root/git/github-muraji/ChaosMouth/media/high/3.wav"
+        process = subprocess.Popen( cmd, shell=True, stderr=subprocess.STDOUT  )
+        print process
+    if data[0] == 4:
+        resetMedia()
+        cmd = "aplay /home/root/git/github-muraji/ChaosMouth/media/low/1.wav"
+        process = subprocess.Popen( cmd, shell=True, stderr=subprocess.STDOUT  )
+        print process
+    elif data[0] == 5:
+        resetMedia()
+        cmd = "aplay /home/root/git/github-muraji/ChaosMouth/media/low/2.wav"
+        process = subprocess.Popen( cmd, shell=True, stderr=subprocess.STDOUT  )
+        print process
+    elif data[0] == 6:
+        resetMedia()
+        cmd = "aplay /home/root/git/github-muraji/ChaosMouth/media/low/3.wav"
         process = subprocess.Popen( cmd, shell=True, stderr=subprocess.STDOUT  )
         print process
 
