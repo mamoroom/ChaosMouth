@@ -52,7 +52,7 @@ if [ "$CMD" = "CONNECTED" ]; then
     kill_daemon udhcpc /var/run/udhcpc-$IFNAME.pid
     #udhcpc -i $IFNAME -p /var/run/udhcpc-$IFNAME.pid -S
 	ifconfig $IFNAME 192.168.1.200 netmask 255.255.255.0
-    route add default gw  192.168.1.255
+    route add default gw  192.168.1.1
 fi
 
 if [ "$CMD" = "DISCONNECTED" ]; then
