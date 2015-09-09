@@ -1,0 +1,12 @@
+[Unit]
+Description=script for bootin up ChaosMouth Prj
+After=mdns.service
+#Requires=multi-user.target network-online.target sockets.target
+
+[Service]
+ExecStart=/usr/bin/python /home/root/git/github-muraji/ChaosMouth/script/oscReciever.py
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=default.target

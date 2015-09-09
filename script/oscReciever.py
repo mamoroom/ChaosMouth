@@ -2,8 +2,9 @@ import time, threading
 import OSC
 import subprocess
 
-server_address = ("192.168.1.96", 9000)
-#server_address = ("172.20.10.11", 9000)
+#server_address = ("192.168.1.96", 9000)
+#server_address = ("127.0.0.1", 9000)
+server_address = ("192.168.1.200", 9000)
 server = OSC.OSCServer(server_address)
 server.addDefaultHandlers()
 process = subprocess.Popen( "tail -f /home/root/git/github-muraji/ChaosMouth/script/hoge.py", shell=True, stderr=subprocess.STDOUT  )
