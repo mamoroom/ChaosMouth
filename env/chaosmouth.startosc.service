@@ -4,7 +4,7 @@ After=mdns.service
 #Requires=multi-user.target network-online.target sockets.target
 
 [Service]
-ExecStart=/usr/bin/python /home/root/git/github-muraji/ChaosMouth/script/oscReciever.py
+ExecStart=/bin/bash /home/root/git/github-muraji/ChaosMouth/script/start.sh
 Restart=always
 RestartSec=10s
 
